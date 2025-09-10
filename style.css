@@ -1,0 +1,135 @@
+:root{
+    --ancho-carta:120px;
+    --alto-carta:160px;
+
+}
+
+*{box-sizing:border-box}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background: #000000 url('img/fondo.jpg') center/cover fixed no-repeat;
+
+}
+
+.capa{
+
+    min-height: 10dvh;
+    padding: 24px 16px 40px;
+    background: radial-gradient(transparent, rgba(0,0,0,0.7) 60%);
+}
+
+h1{
+    margin: 0 0 10px; text-align: center; font-weight: 800;
+}
+
+#panel{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.55);
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+
+#panel .dato{
+    background: black;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+#btnComenzar{
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    padding: 8px 14px;
+    background: crimson;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+#tablero{
+    width: min(95vh,560px);
+    margin: 18px auto 10px;
+    display: grid;
+    grid-template-columns: repeat(4, var(--ancho-carta));
+    gap: 10px; 
+    justify-content: center;
+}
+
+.carta{
+    width: var(--ancho-carta);
+    height: var(--alto-carta);
+    position: relative;
+    perspective: 800px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.reverso, .cara{
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    background: #000000 url('img/carta.jpg') center/cover no-repeat;
+    transition: transform 0.6s;
+}
+
+.cara{
+    transform: rotateY(180deg);
+    overflow: hidden;
+}
+
+.cara img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carta.volteada .cara{
+    transform: rotateY(0);
+}
+
+.carta.volteada .reverso{
+    transform: rotateY(180deg);
+}
+
+.carta.acertada .cara{
+    filter: grayscale(0.2) brightness(1.05);
+}
+
+.carta.acertada::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: url('img/correcto_sin_fondo.png') center/55px 55px no-repeat rgba(31, 1, 70, 0.836);
+}
+
+table{
+    width: min(95vh,720px);
+    margin: 10px auto;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.55);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th,td{
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-align: left;
+}
+
+th{
+    background: rgba(255,255,255,0.06);
+}
+
+.center{
+    text-align: center;
+}

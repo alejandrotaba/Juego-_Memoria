@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juego Memoria</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+  <div class="capa">
+    <h1>JUEGO DE MEMORIA</h1>
+
+    <div id="panel">
+      <span id="datoJugador" class="dato">Jugador: --</span>
+      <span id="datoNivel" class="dato">Nivel: 1</span>
+      <span id="datoAciertos" class="dato">Aciertos: 0</span>
+      <span id="datoIntentos" class="dato">Intentos: 0</span>
+      <span id="datoTiempo" class="dato">Tiempo: 60</span>
+      <button id="btnComenzar">Comenzar</button>
+    </div>
+
+
+    <h3 class="center" style="margin:10px 0 6px">Tablero de Juego</h3>
+    <div id="tablero" aria-label="Tablero de cartas"></div>
+
+
+    <table>
+      <!-- encabezado -->
+       <thead>
+        <tr>
+          <th>#</th>
+          <th>Jugador</th>
+          <th>Nivel Alcanzado</th>
+          <th>Intentos</th>
+          <th>Aciertos</th>
+          <th>Tiempo Restante</th>
+        </tr>
+       </thead>
+
+  
+       <tbody id="tablaJugadores"></tbody>
+
+    </table>
+    
+
+  </div>
+
+
+
+  <audio preload="auto" id="audioClickMp3" src="sonidos/click.mp3"></audio>
+
+  <audio preload="auto" id="audioCorrerMp3" src="sonidos/correr.mp3"></audio>
+
+  <audio preload="auto" id="audioDerrotaMp3" src="sonidos/derrota.mp3"></audio>
+
+  <audio preload="auto" id="audioErrorMp3" src="sonidos/error.mp3"></audio>
+
+  <audio preload="auto" id="audioJugarMp3" src="sonidos/jugar.mp3"></audio>
+ 
+  <audio preload="auto" id="audioSuccessMp3" src="sonidos/success.mp3"></audio>
+
+  <audio preload="auto" id="audioTriunfoMp3" src="sonidos/triunfo.mp3"></audio>
+
+ <audio preload="auto" id="audiofondo" src="sonidos/fondo.mp3" loop></audio>
+
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
+
+
